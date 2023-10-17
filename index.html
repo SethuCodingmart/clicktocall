@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <a href="" id="myLink">Click to Call</a>
+    <a href="" id="your_number">Click to Call</a>
     <script>
         function getQueryParams() {
             var queryParams = {};
@@ -28,7 +28,7 @@
         // Example: accessing a specific query parameter named 'id'
         var id = params.number;
         if (id) {
-            var link = document.getElementById("myLink");
+            var link = document.getElementById("your_number");
             link.href = `tel:` + id;
             link.click()
             console.log("ID:", id);
