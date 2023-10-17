@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call to number</title>
+</head>
+
+<body>
+    <a href="" id="myLink">Click to Call</a>
+    <script>
+        function getQueryParams() {
+            var queryParams = {};
+            var queryString = window.location.search.substring(1);
+            var params = queryString.split("&");
+            for (var i = 0; i < params.length; i++) {
+                var pair = params[i].split("=");
+                queryParams[pair[0]] = decodeURIComponent(pair[1]);
+            }
+            return queryParams;
+        }// Get query parameters
+        var params = getQueryParams();
+
+        // Now you can use the params object within your script
+        console.log(params);
+
+        // Example: accessing a specific query parameter named 'id'
+        var id = params.number;
+        var link = document.getElementById("myLink");
+        link.href = `tel:` + id;
+        link.click()
+        console.log("ID:", id);
+    </script>
+
+</body>
+
+</html>
